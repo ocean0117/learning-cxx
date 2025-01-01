@@ -1,19 +1,16 @@
 #include "../exercise.h"
 
 constexpr unsigned long long fibonacci(int i) {
-    if (i == 0) return 0;
-    if (i == 1) return 1;
-
-    unsigned long long first = 0;
-    unsigned long long second = 1;
-    unsigned long long result;
-
-    for (int n = 2; n <= i; ++n) {
-        result = first + second;
-        first = second;
-        second = result;
+    if(i<=1)
+        return i;
+    unsigned long long a=0,b=1,c=0;
+    
+    for(int j=2;j<=i;j++){
+        c=a+b;
+        a=b;
+        b=c;
     }
-    return result;
+    return b;
 }
 
 int main(int argc, char **argv) {
